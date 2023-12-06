@@ -1,0 +1,17 @@
+﻿@model MessageViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@foreach (var message in Model.Data)
+{
+    <p>@message.TextMessage</p>
+}
+
+@using (Html.BeginForm("SendMessage", "Home", FormMethod.Post))
+{
+    <input type="text" id="message" name="message">
+    <button>Отправить</button>
+}
+
